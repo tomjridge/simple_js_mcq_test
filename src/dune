@@ -1,0 +1,11 @@
+(env (_ (flags -g)))
+
+(executable
+ (name "index") (modes js)
+ (flags (:standard -g))
+ (preprocess (pps js_of_ocaml-ppx_deriving_json js_of_ocaml-ppx ppx_blob))
+ (preprocessor_deps "../src-other/questions.md")
+ (libraries js_of_ocaml js_of_ocaml-tyxml js_of_ocaml-ppx_deriving_json js_of_ocaml-ppx js_of_ocaml-lwt tjr_lib_core p0_lib)
+;; (js_of_ocaml (flags --opt 1))
+)
+
